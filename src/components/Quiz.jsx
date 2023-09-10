@@ -2,21 +2,27 @@ import { useState, useContext } from "react";
 import { QuizContext } from "../helpers/Contexts";
 import { Questions } from "../helpers/QuestionBank";
 function Quiz() {
-    const {score,setScore, setGameState } = useContext(QuizContext);
-    const [currentQuestion, setCurrentQuestion] = useState(0);
-    const [optionChosen, setOptionChosen] = useState('');
-    const nextQuestion = () => {
-      if (Questions[currentQuestion].answer == optionChosen) {
-        setScore(score + 1);
-      }
-      setCurrentQuestion(currentQuestion + 1);
-  }
+  const { score, setScore, setGameState } = useContext(QuizContext);
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [optionChosen, setOptionChosen] = useState("");
+  const nextQuestion = () => {
+    if (Questions[currentQuestion].answer == optionChosen) {
+      setScore(score + 1);
+      alert("Correct Answer");
+    } else {
+      alert(`Wrong Answer, Correct is option ${Questions[currentQuestion].answer}`);
+    }
+    setCurrentQuestion(currentQuestion + 1);
+  };
   const finishQuiz = () => {
     if (Questions[currentQuestion].answer == optionChosen) {
       setScore(score + 1);
+      alert("Correct Answer");
+    } else {
+      alert(`Wrong Answer, Correct is option ${Questions[currentQuestion].answer}`);
     }
-    setGameState('endScreen');
-  }
+    setGameState("endScreen");
+  };
   return (
     <div className="quiz">
       <h1>{Questions[currentQuestion].Q}</h1>
@@ -35,4 +41,4 @@ function Quiz() {
   );
 }
 
-export default Quiz
+export default Quiz;

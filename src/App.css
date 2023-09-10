@@ -40,3 +40,7 @@ align-items: center;
 h1{
     text-align: center;
 }
+
+button:active{
+    background-color: rgb(169, 203, 232);
+}
