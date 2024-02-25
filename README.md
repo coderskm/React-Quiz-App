@@ -1,4 +1,4 @@
-# React CryptoApp Project
+# React Quiz App Project
 
 ## deployed live on :- https://quizrjs.netlify.app/
 
